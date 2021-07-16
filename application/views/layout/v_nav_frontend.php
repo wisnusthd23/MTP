@@ -33,7 +33,7 @@
 				<?php if ($this->session->userdata('email') == "") { ?>
 					<li style="margin-top: 18px; margin-left: 10px;" class="nav-item">
 						<a href="<?= base_url('pelanggan') ?>" class="badge">Login</a> |
-						<a href="<?= base_url('pelanggan/register') ?>" class="badge">Register</a>
+						<a href="<?= base_url('pelanggan/registrasi') ?>" class="badge">Register</a>
 					</li>
 				<?php } else { ?>
 					<li style="background-color: darkseagreen;margin-left: 5px;" class="nav-item dropdown">
