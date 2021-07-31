@@ -129,10 +129,10 @@ class Pelanggan extends CI_Controller
 
 		if ($type == 'verify') {
 			$this->email->subject('Akun Verifikasi');
-			$this->email->message('Klik link ini buat verifikasi akun anda : <a href="' . base_url() . 'pelanggan/verify?email=' . $this->input->post('email') . '&token=' . urldecode($token) . '">Aktifasi</a>');
+			$this->email->message('Klik link ini buat verifikasi akun anda : <a href="' . base_url() . 'pelanggan/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Aktifasi</a>');
 		} else if ($type == 'forgot') {
 			$this->email->subject('Reset Password');
-			$this->email->message('Klik link ini buat reset password akun anda : <a href="' . base_url() . 'pelanggan/resetpassword?email=' . $this->input->post('email') . '&token=' . urldecode($token) . '">Reset Password</a>');
+			$this->email->message('Klik link ini buat reset password akun anda : <a href="' . base_url() . 'pelanggan/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token) . '">Reset Password</a>');
 		}
 
 		if ($this->email->send()) {

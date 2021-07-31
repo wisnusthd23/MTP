@@ -1,6 +1,6 @@
 <section id="home-section" class="hero">
 	<div class="home-slider owl-carousel">
-		<div class="slider-item" style="background-image: url(<?= base_url() ?>nu/images/bg_1.jpg);">
+		<div class="slider-item" style="background-image: url(<?= base_url() ?>nu/images/background3.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -15,7 +15,21 @@
 			</div>
 		</div>
 
-		<div class="slider-item" style="background-image: url(<?= base_url() ?>nu/images/bg_2.jpg);">
+		<div class="slider-item" style="background-image: url(<?= base_url() ?>nu/images/26363.jpg);">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+					<div class="col-sm-12 ftco-animate text-center">
+						<h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
+						<h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+						<p><a href="#product" class="btn btn-primary">View Product</a></p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="slider-item" style="background-image: url(<?= base_url() ?>nu/images/background2.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -155,9 +169,9 @@
 		</div>
 	</div>
 
-	<section class="ftco-section img mt-3" style="background-image: url(<?= base_url() ?>nu/images/bg_3.jpg);">
+	<section class="ftco-section img mt-3" style="background-image: url(<?= base_url() ?>nu/images/background3.jpg);">
 		<div class="container">
-			<div class="row justify-content-end">
+			<div class="row justify-content-start">
 				<div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
 					<h2>Kirim Resep</h2>
 					<p>Silahkan kirim resep dokter anda jika ada, klik tombol <strong>Resep Obat</strong> dibawah</p>
