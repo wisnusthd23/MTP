@@ -113,8 +113,8 @@ class Pelanggan extends CI_Controller
 		$config = [
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
-			'smtp_user' => 'wzeusnu@gmail.com',
-			'smtp_pass' => '0404zeus23',
+			'smtp_user' => 'apotekeisda24@gmail.com',
+			'smtp_pass' => 'inisaya24',
 			'smtp_port' => 465,
 			'mailtype' => 'html',
 			'charset' => 'utf-8',
@@ -124,7 +124,7 @@ class Pelanggan extends CI_Controller
 		$this->load->library('email', $config);
 		$this->email->initialize($config);
 
-		$this->email->from('wzeusnu@gmail.com', 'wisnu setiawan');
+		$this->email->from('apotekeisda24@gmail.com', 'Apotek Eissda');
 		$this->email->to($this->input->post('email'));
 
 		if ($type == 'verify') {
