@@ -21,11 +21,11 @@
                     // <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     // <h5><i class="icon fas fa-info"></i>', '</h5> </div>');
                     //notifikasi gagal upload gambar
-                    if ($this->session->flashdata('pesan')) {
+                    if ($this->session->flashdata('resepobat')) {
                         echo '<div class="alert alert-success alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <h5><i class="icon fas fa-check"></i>';
-                        echo $this->session->flashdata('pesan');
+                        echo $this->session->flashdata('resepobat');
                         echo '</h5></div>';
                     }
 

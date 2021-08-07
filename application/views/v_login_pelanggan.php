@@ -13,10 +13,28 @@
 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 <h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>', '</div>');
 
-					if ($this->session->flashdata('pesan')) {
+					if ($this->session->flashdata('berhasil')) {
 						echo '<div class="alert alert-success alert-dismissible">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
-						echo $this->session->flashdata('pesan');
+						echo $this->session->flashdata('berhasil');
+						echo '</div>';
+					}
+					if ($this->session->flashdata('logout')) {
+						echo '<div class="alert alert-success alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+						echo $this->session->flashdata('logout');
+						echo '</div>';
+					}
+					if ($this->session->flashdata('passwordsalah')) {
+						echo '<div class="alert alert-success alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+						echo $this->session->flashdata('passwordsalah');
+						echo '</div>';
+					}
+					if ($this->session->flashdata('blmaktivasi')) {
+						echo '<div class="alert alert-success alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+						echo $this->session->flashdata('blmaktivasi');
 						echo '</div>';
 					}
 

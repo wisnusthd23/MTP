@@ -19,6 +19,34 @@ class M_resep extends CI_Model
     {
         $this->db->insert('tbl_resep', $data);
     }
+
+    public function get_all_data()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_resep');
+        $this->db->order_by('id_resep', 'desc');
+        return $this->db->get()->result();
+    }
+
+
+    public function get_data($id_resep)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_resep');
+        $this->db->where('id_resep', $id_resep);
+        return $this->db->get()->row();
+    }
+    public function edit($data)
+    {
+        $this->db->where('id_resep', $data['id_resep']);
+        $this->db->update('tbl_resep', $data);
+    }
+
+    public function delete($data)
+    {
+        $this->db->where('id_resep', $data['id_resep']);
+        $this->db->delete('tbl_resep', $data);
+    }
 }
 
 /* End of file M_resep.php */

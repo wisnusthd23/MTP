@@ -13,6 +13,22 @@ class M_admin extends CI_Model
 	{
 		return $this->db->get('tbl_kategori')->num_rows();
 	}
+	public function total_resep()
+	{
+		return $this->db->get('tbl_resep')->num_rows();
+	}
+	public function total_pelanggan()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_pelanggan');
+		$this->db->where('is_active', 1);
+		return $this->db->get()->num_rows();
+	}
+	public function total_admin()
+	{
+
+		return $this->db->get('tbl_user')->num_rows();
+	}
 
 	public function data_setting()
 	{

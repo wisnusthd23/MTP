@@ -24,7 +24,7 @@ class Pesanan_saya extends CI_Controller
             'dikirim' => $this->m_transaksi->dikirim(),
             'selesai' => $this->m_transaksi->selesai(),
             'isi' => 'v_pesanan_saya',
-            'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+            // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
         );
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
     }
@@ -48,7 +48,7 @@ class Pesanan_saya extends CI_Controller
                     'rekening' => $this->m_transaksi->rekening(),
                     'error_upload' => $this->upload->display_errors(),
                     'isi' => 'v_bayar',
-                    'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+                    // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
                 );
                 $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
             } else {
@@ -75,7 +75,7 @@ class Pesanan_saya extends CI_Controller
             'pesanan' => $this->m_transaksi->detail_pesanan($id_transaksi),
             'rekening' => $this->m_transaksi->rekening(),
             'isi' => 'v_bayar',
-            'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+            // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
         );
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
     }

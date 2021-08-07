@@ -27,8 +27,6 @@
 						<th>No</th>
 						<th>Nama Barang</th>
 						<th>Cover</th>
-						<th>Jumlah</th>
-						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,12 +36,6 @@
 							<td><?= $no++; ?></td>
 							<td><?= $value->nama_barang ?></td>
 							<td class="text-center"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" width="100px"></td>
-							<td class="text-center"><span class="badge bg-primary">
-									<h5><?= $value->total_gambar ?></h5>
-								</span></td>
-							<td class="text-center">
-								<a href="<?= base_url('gambarbarang/add/' . $value->id_barang) ?>" class="btn btn-success btn-sm"><i class="fas fa-plus"></i> Add Gambar</a>
-							</td>
 						</tr>
 					<?php } ?>
 

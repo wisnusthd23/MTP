@@ -5,6 +5,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Pelanggan extends CI_Controller
 {
 
+
+	public function __construct()
+	{
+		parent::__construct();
+		//Do your magic here
+
+		$this->load->model('m_pelanggan');
+	}
+
+
 	public function index()
 	{
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
@@ -82,7 +92,7 @@ class Pelanggan extends CI_Controller
 			$data = [
 				'name' => htmlspecialchars($this->input->post('name', true)),
 				'email' => htmlspecialchars($email),
-				'foto' => 'default.jpg',
+				'foto' => 'default.png',
 				'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 				// 'role_id' => 2,
 				'is_active' => 0,
@@ -162,6 +172,7 @@ class Pelanggan extends CI_Controller
 					$this->db->delete('user_token', ['email' => $email]);
 
 					$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">' . $email . ' telah di aktif! silahkan LOGIN!</div>');
+					// $this->session->set_flashdata('berhasil', 'Selamat Email anda telah aktif, Silahkan Login Kembali !!');
 					redirect('pelanggan');
 				} else {
 
@@ -186,9 +197,11 @@ class Pelanggan extends CI_Controller
 	public function logout()
 	{
 		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('id_pelanggan');
 		$this->session->unset_userdata('name');
-		$this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">
-        Kamu sudah Logout!!</div>');
+		// $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">
+		// Kamu sudah Logout!!</div>');
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kamu Sudah Logout !!</div>');
 		redirect('home');
 	}
 
@@ -279,31 +292,6 @@ class Pelanggan extends CI_Controller
 			redirect('pelanggan');
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public function profile()
 	{
 		$data = array(
@@ -344,11 +332,11 @@ class Pelanggan extends CI_Controller
 			$current_password = $this->input->post('current_password');
 			$new_password = $this->input->post('new_password1');
 			if (!password_verify($current_password, $data['user']['password'])) {
-				$this->session->set_flashdata('ubahpassword', '<div class="alert alert-warning" role="alert">Password sekarang tidak sama!</div>');
+				$this->session->set_flashdata('ubahpassword', 'Password sekarang tidak sama!');
 				redirect('pelanggan/profile');
 			} else {
 				if ($current_password == $new_password) {
-					$this->session->set_flashdata('ubahpassword', '<div class="alert alert-warning" role="alert">Password tidak boleh sama dengan password sekarang!</div>');
+					$this->session->set_flashdata('ubahpassword', 'Password tidak boleh sama dengan password sekarang!');
 					redirect('pelanggan/profile');
 				} else {
 					$password_hash = password_hash($new_password, PASSWORD_DEFAULT);
@@ -356,13 +344,34 @@ class Pelanggan extends CI_Controller
 					$this->db->where('email', $this->session->userdata('email'));
 					$this->db->update('tbl_pelanggan');
 
-					$this->session->set_flashdata('ubahpassword', '<div class="alert alert-success" role="alert">Password berhasil di ubah!</div>');
+					$this->session->set_flashdata('ubahpassword', 'Password berhasil di ubah!');
 					redirect('pelanggan/profile');
 				}
 			}
 		}
 	}
+	public function data_pelanggan()
+	{
+		$data = array(
+			'title' => 'Pelanggan',
+			'pelanggan'	=> $this->m_pelanggan->get_all_data(),
+			'isi' => 'v_data_pelanggan',
+		);
+		$this->load->view('layout/v_wrapper_backend', $data, FALSE);
+	}
+
+	public function delete($id_pelanggan = NULL)
+	{
+		$data = array('id_pelanggan' => $id_pelanggan);
+		$this->m_pelanggan->delete($data);
+		$this->session->set_flashdata('delete', 'Data Berhasil Dihapus !!!');
+		redirect('pelanggan/data_pelanggan');
+	}
 }
+
+
+
+
 
 // public function register()
 // {

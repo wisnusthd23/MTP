@@ -47,7 +47,7 @@ class Home extends CI_Controller
             'title' => 'Home',
             'barang' => $this->m_home->get_all_data($config['per_page'], $data['start'], $data['submit']),
             'isi' => 'v_home',
-            'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+            // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
         );
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
     }
@@ -55,7 +55,7 @@ class Home extends CI_Controller
     {
         $data = array(
             'title' => 'Contact',
-            'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array(),
+            // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array(),
             // 'barang' => $this->m_home->get_all_data(),
             'isi' => 'v_contact'
         );
@@ -67,7 +67,7 @@ class Home extends CI_Controller
         $data = array(
             'title' => 'Detail Barang',
             'barang' => $this->m_home->detail_barang($id_barang),
-            'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array(),
+            // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array(),
             'isi' => 'v_detail_barang'
         );
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
@@ -79,7 +79,7 @@ class Home extends CI_Controller
             'title' => 'kategori Barang : ' . $kategori->nama_kategori,
             'barang' => $this->m_home->get_all_data_barang($id_kategori),
             'isi' => 'v_kategori_barang',
-            'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+            // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
         );
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
     }

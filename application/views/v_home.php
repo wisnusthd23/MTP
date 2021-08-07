@@ -6,8 +6,8 @@
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
 					<div class="col-md-12 ftco-animate text-center " data-aos="fade-up">
-						<h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
-						<h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+						<h1 class="mb-2">The Pharmacy Management Team</h1>
+						<h2 class="subheading mb-4">Is Dedicated To Protecting Your Life.</h2>
 						<p><a href="#product" class="btn btn-primary">View Product</a></p>
 					</div>
 
@@ -21,8 +21,8 @@
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
 					<div class="col-sm-12 ftco-animate text-center">
-						<h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
-						<h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+						<h1 class="mb-2">Ask Your Health Care Experts To Give Us</h1>
+						<h2 class="subheading mb-4">A Call On We Can Play A Part.</h2>
 						<p><a href="#product" class="btn btn-primary">View Product</a></p>
 					</div>
 
@@ -35,8 +35,8 @@
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 
 					<div class="col-sm-12 ftco-animate text-center">
-						<h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
-						<h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+						<h1 class="mb-2">Everything You Need To Know To Be</h1>
+						<h2 class="subheading mb-4">Well Healthier</h2>
 						<p><a href="#product" class="btn btn-primary">View Product</a></p>
 					</div>
 
@@ -56,7 +56,7 @@
 					</div>
 					<div class="media-body">
 						<h3 class="heading">Free Shipping</h3>
-						<span>On order over $100</span>
+						<span>On order over Rp.350.000-.</span>
 					</div>
 				</div>
 			</div>
@@ -66,8 +66,8 @@
 						<span class="flaticon-diet"></span>
 					</div>
 					<div class="media-body">
-						<h3 class="heading">Always Fresh</h3>
-						<span>Product well package</span>
+						<h3 class="heading">Ready Stok</h3>
+						<span>Product always ready</span>
 					</div>
 				</div>
 			</div>
@@ -169,15 +169,15 @@
 		</div>
 	</div>
 
-	<section class="ftco-section img mt-3" style="background-image: url(<?= base_url() ?>nu/images/bg_3.jpg);">
+	<section class="ftco-section img mt-3" style="background-image: url(<?= base_url() ?>nu/images/background3.jpg);">
 		<div class="container">
-			<div class="row justify-content-end">
+			<div class="row justify-content-start">
 				<div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
 					<h2>Kirim Resep</h2>
-					<p>Silahkan kirim resep dokter anda jika ada, klik tombol <strong>Resep Obat</strong> dibawah</p>
+					<p style="color: black;">Silahkan kirim resep dokter anda jika ada, klik tombol <strong>Resep Obat</strong> dibawah</p>
 					<div class="form-group">
 						<div class="form-group">
-							<a href="<?= base_url('resep') ?>" class="btn btn-primary">Resep Obat</a>
+							<a href="" class="btn btn-primary">Resep Obat</a>
 						</div>
 					</div>
 				</div>

@@ -2,14 +2,14 @@
 	<!-- small box -->
 	<div class="small-box bg-info">
 		<div class="inner">
-			<h3>150</h3>
+			<h3><?= $total_pesanan ?></h3>
 
 			<p>Pesanan Masuk</p>
 		</div>
 		<div class="icon">
 			<i class="ion ion-bag"></i>
 		</div>
-		<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+		<a href="<?= base_url('admin/pesanan_masuk') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 	</div>
 </div>
 
@@ -32,14 +32,28 @@
 	<!-- small box -->
 	<div class="small-box bg-warning">
 		<div class="inner">
-			<h3>150</h3>
+			<h3><?= $total_pelanggan ?></h3>
 
 			<p>Pelanggan</p>
 		</div>
 		<div class="icon">
 			<i class="fas fa-users"></i>
 		</div>
-		<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+		<a href="<?= base_url('pelanggan/data_pelanggan') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+	</div>
+</div>
+<div class="col-lg-3 col-6">
+	<!-- small box -->
+	<div class="small-box bg-secondary">
+		<div class="inner">
+			<h3><?= $total_admin ?></h3>
+
+			<p>Admin</p>
+		</div>
+		<div class="icon">
+			<i class="fas fa-users"></i>
+		</div>
+		<a href="<?= base_url('user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 	</div>
 </div>
 
@@ -55,5 +69,19 @@
 			<i class="fas fa-list"></i>
 		</div>
 		<a href="<?= base_url('kategori') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+	</div>
+</div>
+<div class="col-lg-3 col-6">
+	<!-- small box -->
+	<div class="small-box bg-danger">
+		<div class="inner">
+			<h3><?= $total_resep ?></h3>
+
+			<p>Resep</p>
+		</div>
+		<div class="icon">
+			<i class="fas fa-book-open"></i>
+		</div>
+		<a href="<?= base_url('admin/resep_masuk') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 	</div>
 </div>

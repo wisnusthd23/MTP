@@ -44,7 +44,7 @@ class Resep extends CI_Controller
                     // 'kategori' => $this->m_kategori->get_all_data(),
                     'error_upload' => $this->upload->display_errors(),
                     'isi' => 'v_resep',
-                    'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+                    // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
                 );
                 $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
             } else {
@@ -61,7 +61,7 @@ class Resep extends CI_Controller
                     'resep'    => $upload_data['uploads']['file_name'],
                 );
                 $this->m_resep->add($data);
-                $this->session->set_flashdata('pesan', 'Data Berhasil Ditambahkan !!!');
+                $this->session->set_flashdata('resepobat', 'Data Berhasil Ditambahkan !!!');
                 redirect('resep');
             }
         }
@@ -70,9 +70,21 @@ class Resep extends CI_Controller
             'title' => 'Resep',
             // 'kategori' => $this->m_kategori->get_all_data(),
             'isi' => 'v_resep',
-            'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+            // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
         );
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
+    }
+
+
+    //admin
+    public function index_admin()
+    {
+        $data = array(
+            'title' => 'resep_admin',
+            'resep_admin' => $this->m_resep->get_all_data(),
+            'isi' => 'v_resep_admin',
+        );
+        $this->load->view('layout/v_wrapper_backend', $data, FALSE);
     }
 }
 

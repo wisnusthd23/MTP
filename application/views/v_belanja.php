@@ -1,7 +1,18 @@
-<div class="card card-solid">
-	<div class="card-body pb-0">
+<div class="hero-wrap hero-bread" style="background-image: url('<?= base_url() ?>nu/images/background4.jpg');">
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-center justify-content-center">
+			<div class="col-md-9 ftco-animate text-center">
+				<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
+				<h1 class="mb-0 bread">My Cart</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="ftco-section ftco-cart">
+	<div class="container">
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-md-12 ftco-animate">
 				<?php
 
 				if ($this->session->flashdata('pesan')) {
@@ -13,79 +24,79 @@
 </div>';
 				}
 				?>
-			</div>
-			<div class="col-sm-12">
-				<?php echo form_open('belanja/update'); ?>
+				<div class="cart-list">
+					<?php echo form_open('belanja/update'); ?>
 
-				<table class="table" cellpadding="6" cellspacing="1" style="width:100%">
+					<table cellpadding="6" cellspacing="1" style="width:100%" border="1">
 
-					<tr>
-						<th width="100px">QTY</th>
-						<th>Nama Barang</th>
-						<th style="text-align:right">Harga</th>
-						<th style="text-align:right">Sub-Total</th>
-						<th style="text-align:center">Berat</th>
-						<th class="text-center">Action</th>
-					</tr>
-
-					<?php $i = 1; ?>
-
-					<?php
-					$tot_berat = 0;
-					foreach ($this->cart->contents() as $items) {
-						$barang = $this->m_home->detail_barang($items['id']);
-						$berat = $items['qty'] * $barang->berat;
-
-						$tot_berat = $tot_berat + $berat;
-					?>
 						<tr>
-							<td>
-								<?php
-								echo form_input(array(
-									'name' => $i . '[qty]',
-									'value' => $items['qty'],
-									'maxlength' => '3',
-									'min' => '0',
-									'size' => '5',
-									'type' => 'number',
-									'class' => 'form-control'
-								));
-								?>
+							<th style="width: 75px;">QTY</th>
+							<th>Nama Barang</th>
+							<th>Berat (mg)</th>
+							<th style="text-align:right">Harga</th>
+							<th style="text-align:right">Sub-Total</th>
+							<th class="text-center">Action</th>
+						</tr>
+
+						<?php $i = 1; ?>
+
+						<?php
+						$totalbrt = 0;
+						foreach ($this->cart->contents() as $items) {
+							$barang = $this->m_home->detail_barang($items['id']);
+							$berat = $items['qty'] * $barang->berat;
+							$totalbrt = $totalbrt + $berat;
+						?>
+
+							<?php echo form_hidden($i . '[rowid]', $items['rowid']); ?>
+
+							<tr>
+								<td><?php echo form_input(array(
+										'name' => $i . '[qty]',
+										'value' => $items['qty'],
+										'maxlength' => '3',
+										'min' => '0',
+										'size' => '5',
+										'type' => 'number',
+										'class' => 'form-control'
+									)); ?></td>
+								<td>
+									<?php echo $items['name']; ?>
+								</td>
+								<td><?= $berat; ?></td>
+								<td style="text-align:right">Rp.<?php echo $this->cart->format_number($items['price']); ?></td>
+								<td style="text-align:right">Rp.<?php echo $this->cart->format_number($items['subtotal']); ?></td>
+								<td class="text-center">
+									<a href="<?= base_url('belanja/delete/' . $items['rowid']) ?>" class="badge badge-danger">Hapus</a>
+								</td>
+							</tr>
+
+							<?php $i++; ?>
+
+						<?php } ?>
+
+						<tr>
+							<td colspan="1"> </td>
+							<td class="right"><strong>Total</strong></td>
+							<td class="right">
+								<h3><?= $totalbrt ?></h3>
 							</td>
-							<td><?php echo $items['name']; ?></td>
-							<td style="text-align:right">Rp. <?php echo number_format($items['price'], 0); ?></td>
-							<td style="text-align:right">Rp. <?php echo  number_format($items['subtotal'], 0); ?></td>
-							<td class="text-center"><?= $berat  ?> Gr</td>
-							<td class="text-center">
-								<a href="<?= base_url('belanja/delete/' . $items['rowid']) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+							<td class="right"><strong>Total</strong></td>
+							<td class="right">
+								<h3>Rp.<?php echo $this->cart->format_number($this->cart->total()); ?></h3>
 							</td>
 						</tr>
 
-						<?php $i++; ?>
-
-					<?php } ?>
-
-					<tr>
-						<td class="right">
-							<h3>Total :</h3>
-						</td>
-						<td class="right">
-							<h3>Rp. <?php echo number_format($this->cart->total(), 0); ?></h3>
-						</td>
-						<th>Total Berat : <?= $tot_berat ?> Gr</th>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-
-				</table>
-
-				<button type="submit" class="btn btn-primary btn-flat"><i class="fa fa-save"></i> Update Cart</button>
-				<a href="<?= base_url('belanja/clear') ?>" class="btn btn-danger btn-flat"><i class="fa fa-recycle"></i> Clear Cart</a>
-				<a href="<?= base_url('belanja/cekout')  ?>" class="btn btn-success btn-flat"><i class="fa fa-check-square"></i> Check Out</a>
-				<?php echo form_close(); ?>
-				<br>
+					</table>
+					<div class="mt-3 mb-3">
+						<button style="width: 111px;height: 39px !important;color:white !important" type="submit" href="" class="btn btn-success">Update Cart</button>
+						<a href="<?= base_url('belanja/deleteAll') ?>" class="btn btn-danger">Hapus Belanjaan</a>
+						<a href="<?= base_url('belanja/cekout') ?>" class="btn btn-success"> Check Out</a>
+					</div>
+					<?php echo form_close(); ?>
+				</div>
 			</div>
 		</div>
+
 	</div>
-</div>
+</section>

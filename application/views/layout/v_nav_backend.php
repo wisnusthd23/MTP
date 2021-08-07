@@ -68,44 +68,37 @@
 						<p> Pesanan Masuk </p>
 					</a>
 				</li>
-
-				<li class="nav-item has-treeview">
-					<a href="#" class="nav-link">
-						<i class="nav-icon fas fa-th"></i>
-						<p>
-							Starter Pages
-							<i class="right fas fa-angle-left"></i>
-						</p>
+				<li class="nav-item">
+					<a href="<?= base_url('resep/index_admin')  ?>" class="nav-link <?php if ($this->uri->segment(2) == 'index_admin' and $this->uri->segment(1) == 'resep') {
+																						echo "active";
+																					} ?>">
+						<i class="nav-icon fas  fa-download"></i>
+						<p> Daftar Resep </p>
 					</a>
-					<ul class="nav nav-treeview">
-						<li class="nav-item">
-							<a href="#" class="nav-link active">
-								<i class="far fa-circle nav-icon"></i>
-								<p>Active Page</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link">
-								<i class="far fa-circle nav-icon"></i>
-								<p>Inactive Page</p>
-							</a>
-						</li>
-					</ul>
 				</li>
+
+
 
 				<li class="nav-item">
-					<a href="<?= base_url('admin/setting') ?>" class="nav-link">
-						<i class="nav-icon fa fa-asterisk"></i>
-						<p> Setting </p>
+					<a href="<?= base_url('pelanggan/data_pelanggan') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'pelanggan') {
+																								echo "active";
+																							} ?>">
+						<i class="nav-icon fas fa-users"></i>
+						<p> Pelanggan </p>
 					</a>
 				</li>
-
 				<li class="nav-item">
 					<a href="<?= base_url('user') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'user') {
 																			echo "active";
 																		} ?>">
 						<i class="nav-icon fas fa-users"></i>
 						<p> User </p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="<?= base_url('admin/setting') ?>" class="nav-link">
+						<i class="nav-icon fa fa-asterisk"></i>
+						<p> Setting </p>
 					</a>
 				</li>
 

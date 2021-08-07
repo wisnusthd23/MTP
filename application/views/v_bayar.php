@@ -6,9 +6,10 @@
 			</div>
 			<div class="card-body">
 
-				<p>Silahkan Transfer Uang Ke No Rekening Di Bawah Ini Sebesar : <h1 class="text-primary">Rp. <?= number_format($pesanan->total_bayar, 0) ?>.-</h1>
+				<p>Silahkan Transfer Uang Ke No Rekening Di Bawah Ini Sebesar :
+				<h1 class="text-primary">Rp. <?= number_format($pesanan->total_bayar, 0) ?>.-</h1>
 				</p><br>
-				<table class="table">
+				<table cellpadding="10" cellspacing="5" style="width: 100%;">
 					<tr>
 						<th>Bank</th>
 						<th>No Rekening</th>
@@ -68,3 +69,5 @@
 	</div>
 
 </div>
+<br>
+<br>

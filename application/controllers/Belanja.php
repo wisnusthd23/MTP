@@ -20,7 +20,7 @@ class Belanja extends CI_Controller
         $data = array(
             'title' => 'Keranjang Belanja',
             'isi' => 'v_belanja',
-            'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+            // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
 
         );
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
@@ -84,7 +84,7 @@ class Belanja extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $data = array(
                 'title' => 'Cek Out Belanja',
-                'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
+                // 'user' => $this->db->get_where('tbl_pelanggan', ['email' => $this->session->userdata('email')])->row_array()
                 // 'isi' => 'v_cekout',
             );
             $this->load->view('v_cekout', $data, FALSE);
@@ -123,7 +123,7 @@ class Belanja extends CI_Controller
             }
 
             //=========================================
-            $this->session->set_flashdata('pesan', 'Pesanan Berhasil Di Proses !!!');
+            $this->session->set_flashdata('cekout', 'Pesanan Berhasil Di Proses !!!');
             $this->cart->destroy();
             redirect('pesanan_saya');
         }

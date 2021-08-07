@@ -79,9 +79,11 @@
 								<?php } ?>
 							</div>
 						</li>
+
 						<!-- <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 				<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
 						<li class="nav-item"><a href="<?= base_url('home/contact') ?>" class="nav-link">Contact</a></li>
+						<li class="nav-item"><a href="<?= base_url('resep') ?>" class="nav-link">Resep Obat</a></li>
 						<?php $keranjang = $this->cart->contents();
 						$jml_item = 0;
 						foreach ($keranjang as $key => $value) {
@@ -114,6 +116,16 @@
 
 
 		<!-- Content Wrapper. Contains page content -->
+		<div class="hero-wrap hero-bread" style="background-image: url('<?= base_url() ?>nu/images/background4.jpg');">
+			<div class="container">
+				<div class="row no-gutters slider-text align-items-center justify-content-center">
+					<div class="col-md-9 ftco-animate text-center">
+						<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span>/ <span>Cekout</span></p>
+						<h1 class="mb-0 bread">Cekout</h1>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<!-- /.content-header -->
@@ -297,7 +309,7 @@
 							<?php echo form_close() ?>
 						</div>
 
-
+						<hr style="color: black;">
 
 
 						<script>

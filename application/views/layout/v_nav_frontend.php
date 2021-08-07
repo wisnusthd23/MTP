@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	<div class="container">
-		<a class="navbar-brand" href="index.html">Apotek Eisda</a>
+		<a class="navbar-brand" href="index.html">Apotek Eissda</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="oi oi-menu"></span> Menu
 		</button>
@@ -37,7 +37,7 @@
 					</li>
 				<?php } else { ?>
 					<li style="background-color: darkseagreen;margin-left: 5px;" class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown"><?= $user['name']; ?></a>
+						<a class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown"><?= $this->session->userdata('name')  ?></a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="<?= base_url('pelanggan/profile') ?>">Profile</a>
 							<a class="dropdown-item" href="<?= base_url('pesanan_saya') ?>">Pesanan Saya</a>

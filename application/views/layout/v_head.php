@@ -53,6 +53,17 @@
       background: #33cc33;
     }
   </style>
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "0672675c-246b-4f86-a0b6-cbe8fc3bcd17";
+    (function() {
+      d = document;
+      s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
 </head>
 
 <body class="goto-here">

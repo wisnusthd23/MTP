@@ -14,6 +14,14 @@ class M_pesanan_masuk extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function total_pesanan()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_transaksi');
+        $this->db->where('status_order=0');
+        return $this->db->get()->num_rows();
+    }
+
     public function pesanan_diproses()
     {
         $this->db->select('*');

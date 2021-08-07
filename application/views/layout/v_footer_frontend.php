@@ -23,17 +23,29 @@
         <div style="margin-left: 9rem !important;" class="ftco-footer-widget mb-4 ml-md-5">
           <h2 class="ftco-heading-2">Menu</h2>
           <ul class="list-unstyled">
-            <li><a href="#" class="py-2 d-block">Shop</a></li>
-            <li><a href="#" class="py-2 d-block">About</a></li>
-            <li><a href="#" class="py-2 d-block">Journal</a></li>
-            <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+            <li><a href="<?= base_url() ?>" class="py-2 d-block">Home</a></li>
+
+            <?php $kategori = $this->m_home->get_all_data_kategori(); ?>
+            <li class="nav-item dropdown" style="margin-left: -15px;">
+              <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kategori</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <?php foreach ($kategori as $key => $value) { ?>
+                  <a class="dropdown-item" href="<?= base_url('home/kategori/' . $value->id_kategori) ?>"><?= $value->nama_kategori ?></a>
+                <?php } ?>
+              </div>
+            </li>
+            <!-- <li><a href="<?= base_url() ?>" class="py-2 d-block">Kategori</a></li> -->
+
+
+            <li><a href="<?= base_url('home/contact') ?>" class="py-2 d-block">Contact</a></li>
+            <li><a href="<?= base_url('resep_obat') ?>" class="py-2 d-block">Resep Obat</a></li>
           </ul>
         </div>
       </div>
 
       <div class="col-md">
         <div class="ftco-footer-widget ml-5 mb-4">
-          <h2 class="ftco-heading-2">Have a Questions?</h2>
+          <h2 class="ftco-heading-2">Ada Pertanyaan?</h2>
           <div class="block-23 mb-3">
             <ul>
               <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
