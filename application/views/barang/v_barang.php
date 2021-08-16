@@ -21,15 +21,19 @@
 
 
 			?>
+
 			<table class="table table-bordered" id="example1">
 				<thead class="text-center">
 					<tr>
-						<th>No</th>
-						<th>Nama Barang</th>
-						<th>Kategori</th>
-						<th>Harga</th>
-						<th>Gambar</th>
-						<th>Action</th>
+						<th style="width: 1%;">No</th>
+						<th style="width: 1%;">Nama Barang</th>
+						<th style="width: 1%;">Kategori</th>
+						<th style="width: 1%;">Deskripsi</th>
+						<th style="width: 1%;">Komposisi</th>
+						<th style="width: 1%;">Manfaat</th>
+						<th style="width: 1%;">Harga</th>
+						<th style="width: 1%;">Gambar</th>
+						<th style="width: 1%;">Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,19 +43,24 @@
 							<td class="text-center"><?= $no++; ?></td>
 							<td>
 								<?= $value->nama_barang ?><br>
-								Berat : <?= $value->berat ?> Gr
+								Berat : <?= $value->berat ?> mg
 							</td>
 							<td class="text-center"><?= $value->nama_kategori ?></td>
+							<td class="text-center"><?= $value->deskripsi ?></td>
+							<td class="text-center"><?= $value->komposisi ?></td>
+							<td class="text-center"><?= $value->manfaat ?></td>
 							<td class="text-center">Rp. <?= number_format($value->harga, 0) ?></td>
 							<td class="text-center"><img src="<?= base_url('assets/gambar/' . $value->gambar) ?>" width="150px"></td>
 							<td class="text-center">
 								<a href="<?= base_url('barang/edit/' . $value->id_barang) ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
 								<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value->id_barang ?>"><i class="fas fa-trash"></i></button>
 							</td>
-						</tr>
-					<?php } ?>
+
+						<?php } ?>
+
 				</tbody>
 			</table>
+
 		</div>
 		<!-- /.card-body -->
 	</div>

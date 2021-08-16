@@ -15,6 +15,7 @@ class Resep extends CI_Controller
 
     public function index()
     {
+        $this->pelanggan_login->proteksi_halaman();
         $this->form_validation->set_rules('email', 'Email', 'required', array(
             'required' => '%s Haris Diisi !!!'
         ));
@@ -61,7 +62,7 @@ class Resep extends CI_Controller
                     'resep'    => $upload_data['uploads']['file_name'],
                 );
                 $this->m_resep->add($data);
-                $this->session->set_flashdata('resepobat', 'Data Berhasil Ditambahkan !!!');
+                $this->session->set_flashdata('resepobat', 'Resep Berhasil Kami Terima!!!');
                 redirect('resep');
             }
         }

@@ -41,6 +41,12 @@ class Barang extends CI_Controller
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required', array(
 			'required' => '%s Haris Diisi !!!'
 		));
+		$this->form_validation->set_rules('komposisi', 'Komposisi', 'required', array(
+			'required' => '%s Haris Diisi !!!'
+		));
+		$this->form_validation->set_rules('manfaat', 'Manfaat', 'required', array(
+			'required' => '%s Haris Diisi !!!'
+		));
 
 
 		if ($this->form_validation->run() == TRUE) {
@@ -68,6 +74,8 @@ class Barang extends CI_Controller
 					'harga' => $this->input->post('harga'),
 					'berat' => $this->input->post('berat'),
 					'deskripsi' => $this->input->post('deskripsi'),
+					'komposisi' => $this->input->post('komposisi'),
+					'manfaat' => $this->input->post('manfaat'),
 					'gambar'	=> $upload_data['uploads']['file_name'],
 				);
 				$this->m_barang->add($data);
@@ -100,6 +108,12 @@ class Barang extends CI_Controller
 			'required' => '%s Haris Diisi !!!'
 		));
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required', array(
+			'required' => '%s Haris Diisi !!!'
+		));
+		$this->form_validation->set_rules('komposisi', 'Komposisi', 'required', array(
+			'required' => '%s Haris Diisi !!!'
+		));
+		$this->form_validation->set_rules('manfaat', 'Manfaat', 'required', array(
 			'required' => '%s Haris Diisi !!!'
 		));
 
@@ -137,6 +151,8 @@ class Barang extends CI_Controller
 					'harga' => $this->input->post('harga'),
 					'berat' => $this->input->post('berat'),
 					'deskripsi' => $this->input->post('deskripsi'),
+					'komposisi' => $this->input->post('komposisi'),
+					'manfaat' => $this->input->post('manfaat'),
 					'gambar'	=> $upload_data['uploads']['file_name'],
 				);
 				$this->m_barang->edit($data);
@@ -151,6 +167,8 @@ class Barang extends CI_Controller
 				'harga' => $this->input->post('harga'),
 				'berat' => $this->input->post('berat'),
 				'deskripsi' => $this->input->post('deskripsi'),
+				'komposisi' => $this->input->post('komposisi'),
+				'manfaat' => $this->input->post('manfaat'),
 			);
 			$this->m_barang->edit($data);
 			$this->session->set_flashdata('pesan', 'Data Berhasil Diganti !!!');

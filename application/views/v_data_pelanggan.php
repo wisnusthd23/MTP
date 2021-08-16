@@ -54,60 +54,6 @@
 </div>
 
 
-<!--modal add -->
-<!-- <div class="modal fade" id="add">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Add User</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <?php
-                echo form_open('user/add');
-                ?>
-
-                <div class="form-group">
-                    <label>Nama User</label>
-                    <input type="text" name="nama_user" class="form-control" placeholder="Nama User" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" name="username" class="form-control" placeholder="Username" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="text" name="password" class="form-control" placeholder="Password" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Level User</label>
-                    <select name="level_user" class="form-control">
-                        <option value="1" selected>Admin</option>
-                        <option value="2">User</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
-
-            </div>
-            <?php
-            echo form_close();
-            ?>
-        </div> -->
-<!-- /.modal-content -->
-<!-- </div> -->
-<!-- /.modal-dialog -->
-<!-- </div> -->
-
 
 <!--modal edit -->
 <!-- <?php foreach ($user as $key => $value) { ?>

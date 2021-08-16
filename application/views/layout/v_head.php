@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="<?= base_url() ?>nu/css/style.css">
   <link rel="stylesheet" href="<?= base_url() ?>nu/css/sweetalert2.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>nu/css/bootstrap-4.min.css">
+
+  <link rel="shortcut icon" href="<?= base_url() ?>EISSDA.png" type="image/x-icon">
   <style>
     /* width */
     ::-webkit-scrollbar {

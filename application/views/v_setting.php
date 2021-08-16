@@ -9,11 +9,11 @@
 
 			<?php
 
-			if ($this->session->flashdata('pesan')) {
+			if ($this->session->flashdata('setting')) {
 				echo '<div class="alert alert-success alert-dismissible">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 				<h5><i class="icon fas fa-check"></i>';
-				echo $this->session->flashdata('pesan');
+				echo $this->session->flashdata('setting');
 				echo '</h5></div>';
 			}
 

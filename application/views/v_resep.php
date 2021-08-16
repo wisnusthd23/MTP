@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row mt-5 justify-content-center">
         <div class="col-md-6">
-            <div class="card">
+            <div class="card border-success">
                 <div class="card-body">
                     <!-- Kami akan menghubungi anda melalui email, pastikan email anda aktif! Terimakasih! -->
                     <?php
@@ -35,8 +35,14 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <h5><i class="icon fas fa-info"></i>' . $error_upload . '</h5> </div>';
                     }
+
                     echo form_open_multipart('resep') ?>
                     <div class="form-group">
+                        <div class="card border-warning mb-3">
+                            <div class="card-body text-warning">
+                                <p class="card-text">Pastikan Email yang anda isi adalah email aktif karena kami akan memberitahukan anda lewat email yang anda isikan, Terimakasih!!</p>
+                            </div>
+                        </div>
                         <label>Email</label>
                         <input name="email" class="form-control" placeholder="Email" required>
                     </div>

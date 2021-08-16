@@ -43,7 +43,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="form-group">
-						<label>Berat (Gr)</label>
+						<label>Berat (mg)</label>
 						<input type="number" name="berat" min="0" class="form-control" placeholder="Berat Dalam Satuan Gram" value="<?= $barang->berat ?>">
 					</div>
 				</div>
@@ -52,6 +52,14 @@
 			<div class="form-group">
 				<label>Deskripsi Barang</label>
 				<textarea name="deskripsi" class="form-control" rows="5" placeholder="Deskripsi Barang"><?= $barang->deskripsi ?></textarea>
+			</div>
+			<div class="form-group">
+				<label>Komposisi Barang</label>
+				<textarea name="komposisi" class="form-control" rows="5" placeholder="Deskripsi Barang"><?= $barang->komposisi ?></textarea>
+			</div>
+			<div class="form-group">
+				<label>Manfaat Barang</label>
+				<textarea name="manfaat" class="form-control" rows="5" placeholder="Deskripsi Barang"><?= $barang->manfaat ?></textarea>
 			</div>
 			<div class="row">
 				<div class="col-sm-6">

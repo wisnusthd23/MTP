@@ -56,7 +56,7 @@ class Belanja extends CI_Controller
             $this->cart->update($data);
             $i++;
         }
-        $this->session->set_flashdata('pesan', 'Keranjang Berhasil Di Update !!!');
+        $this->session->set_flashdata('belanja', 'Keranjang Berhasil Di Update !!!');
         redirect('belanja');
     }
 
@@ -123,7 +123,7 @@ class Belanja extends CI_Controller
             }
 
             //=========================================
-            $this->session->set_flashdata('cekout', 'Pesanan Berhasil Di Proses !!!');
+            $this->session->set_flashdata('pesanan', 'Pesanan Berhasil Di Proses !!!');
             $this->cart->destroy();
             redirect('pesanan_saya');
         }

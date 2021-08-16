@@ -65,7 +65,7 @@ class Pesanan_saya extends CI_Controller
                     'bukti_bayar'    => $upload_data['uploads']['file_name'],
                 );
                 $this->m_transaksi->upload_buktibayar($data);
-                $this->session->set_flashdata('pesan', 'Bukti Pembayaran Berhasil Di Upload !!!');
+                $this->session->set_flashdata('pesanan', 'Bukti Pembayaran Berhasil Di Upload !!!');
                 redirect('pesanan_saya');
             }
         }
@@ -87,7 +87,7 @@ class Pesanan_saya extends CI_Controller
             'status_order' => '3'
         );
         $this->m_pesanan_masuk->update_order($data);
-        $this->session->set_flashdata('pesan', 'Pesanan Telah diterima !!!');
+        $this->session->set_flashdata('pesanan', 'Pesanan Telah diterima !!!');
         redirect('pesanan_saya');
     }
 }

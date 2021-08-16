@@ -75,9 +75,9 @@ class Pelanggan extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_pelanggan.email]', [
 			'is_unique' => 'Email Sudah digunakan!'
 		]);
-		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
+		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]|matches[password2]', [
 			'matches' => 'password tidak sama!',
-			'min_length' => 'password terlalu pendek!'
+			'min_length' => 'password terlalu pendek! Min. 8 karakter'
 		]);
 		$this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
@@ -267,11 +267,11 @@ class Pelanggan extends CI_Controller
 			redirect('pelanggan');
 		}
 
-		$this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[3]|matches[password2]', [
+		$this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[8]|matches[password2]', [
 			'matches' => 'password tidak sama!',
-			'min_length' => 'password terlalu pendek!'
+			'min_length' => 'password terlalu pendek! Min. 8 karakter'
 		]);
-		$this->form_validation->set_rules('password2', 'Repeat Password', 'trim|required|min_length[3]|matches[password1]');
+		$this->form_validation->set_rules('password2', 'Repeat Password', 'trim|required|min_length[8]|matches[password1]');
 
 		if ($this->form_validation->run() == false) {
 
@@ -310,14 +310,14 @@ class Pelanggan extends CI_Controller
 		$this->form_validation->set_rules('current_password', 'Current Password', 'required|trim', [
 			'required' => 'Harus di isi!'
 		]);
-		$this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]', [
+		$this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[8]|matches[new_password2]', [
 			'matches' => 'password tidak sama!',
-			'min_length' => 'password terlalu pendek!',
+			'min_length' => 'password terlalu pendek! Min. 8 karakter',
 			'required' => 'Harus di isi!'
 		]);
-		$this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|min_length[3]|matches[new_password1]', [
+		$this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|min_length[8]|matches[new_password1]', [
 			'matches' => 'password tidak sama!',
-			'min_length' => 'password terlalu pendek!',
+			'min_length' => 'password terlalu pendek! Min. 8 karakter',
 			'required' => 'Harus di isi!'
 		]);
 

@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- My CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>assetss/auth/style.css">
+    <link rel="shortcut icon" href="<?= base_url() ?>EISSDA.png" type="image/x-icon">
 </head>
 
 <body class="hold-transition login-page">

@@ -177,7 +177,7 @@
 					<p style="color: black;">Silahkan kirim resep dokter anda jika ada, klik tombol <strong>Resep Obat</strong> dibawah</p>
 					<div class="form-group">
 						<div class="form-group">
-							<a href="" class="btn btn-primary">Resep Obat</a>
+							<a href="<?= base_url('resep') ?>" class="btn btn-primary">Resep Obat</a>
 						</div>
 					</div>
 				</div>

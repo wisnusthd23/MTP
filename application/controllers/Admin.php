@@ -60,7 +60,7 @@ class Admin extends CI_Controller
 				'no_telpon' => $this->input->post('no_telpon'),
 			);
 			$this->m_admin->edit($data);
-			$this->session->set_flashdata('pesan', 'Settingan Berhasil di Ganti !!!');
+			$this->session->set_flashdata('setting', 'Settingan Berhasil di Ganti !!!');
 			redirect('admin/setting');
 		}
 	}
@@ -86,7 +86,7 @@ class Admin extends CI_Controller
 			'status_order' => '1'
 		);
 		$this->m_pesanan_masuk->update_order($data);
-		$this->session->set_flashdata('pesan', 'Pesanan Berhasil Di Proses/Dikemas !!!');
+		$this->session->set_flashdata('proses', 'Pesanan Berhasil Di Proses/Dikemas !!!');
 		redirect('admin/pesanan_masuk');
 	}
 
@@ -98,7 +98,7 @@ class Admin extends CI_Controller
 			'status_order' => '2'
 		);
 		$this->m_pesanan_masuk->update_order($data);
-		$this->session->set_flashdata('pesan', 'Pesanan Berhasil Di Kirim !!!');
+		$this->session->set_flashdata('kirim', 'Pesanan Berhasil Di Kirim !!!');
 		redirect('admin/pesanan_masuk');
 	}
 }

@@ -34,6 +34,8 @@ class Home extends CI_Controller
 
         //config
         $this->db->like('nama_barang', $data['submit']);
+        $this->db->or_like('deskripsi', $data['submit']);
+        $this->db->or_like('manfaat', $data['submit']);
         $this->db->from('tbl_barang');
         $config['total_rows'] = $this->db->count_all_results();
         $config['per_page'] = 8;

@@ -35,5 +35,6 @@
     <script src="<?= base_url() ?>template/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?= base_url() ?>template/dist/js/demo.js"></script>
+    <link rel="shortcut icon" href="<?= base_url() ?>EISSDA.png" type="image/x-icon">
 
 </head>

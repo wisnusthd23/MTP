@@ -9,6 +9,8 @@ class M_home extends CI_Model
 
         if ($submit) {
             $this->db->like('nama_barang', $submit);
+            $this->db->or_like('deskripsi', $submit);
+            $this->db->or_like('komposisi', $submit);
         }
 
         $this->db->select('*');

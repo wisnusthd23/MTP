@@ -7,10 +7,6 @@
         <div class="card-body login-card-body">
             <p class="login-box-msg">LOGIN</p>
             <?= $this->session->flashdata('message'); ?>
-            <!-- <?= $this->session->flashdata('passwordsalah'); ?> -->
-            <!-- <?= $this->session->flashdata('blmterdaftar'); ?> -->
-            <!-- <?= $this->session->flashdata('erorr'); ?> -->
-            <!-- <?= $this->session->flashdata('changepassword'); ?> -->
 
             <form action="<?= base_url('pelanggan'); ?>" method="post">
                 <div class="input-group mb-1">

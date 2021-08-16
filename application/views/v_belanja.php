@@ -15,11 +15,11 @@
 			<div class="col-md-12 ftco-animate">
 				<?php
 
-				if ($this->session->flashdata('pesan')) {
+				if ($this->session->flashdata('belanja')) {
 					echo '<div class="alert alert-success alert-dismissible">
 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 <h5><i class="icon fas fa-check"></i>';
-					echo $this->session->flashdata('pesan');
+					echo $this->session->flashdata('belanja');
 					echo '</h5>
 </div>';
 				}
